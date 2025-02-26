@@ -1422,6 +1422,59 @@ body.light-mode .content {
     height: auto;
     max-height: 85vh;
 }
+/* Apply background2.jpg only on login page */
+body.login-page {
+    background: url('background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensuring the login container is centered properly */
+#login-container {
+    background: rgba(255, 255, 255, 0.15); /* Light glass effect */
+    backdrop-filter: blur(12px); /* Blur effect */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    width: 40%;
+    max-width: 450px;
+    height: auto;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Style the login box inside */
+.login-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    backdrop-filter: blur(5px);
+}
+
+/* Ensuring that background1.jpg applies only on the main page */
+body:not(.login-page) {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Make sure the main content is displayed correctly */
+#main-content {
+    display: none;
+}
+
 
 
 
