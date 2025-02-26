@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <title>Personal Finance Tracker</title>
+</head>
+<body class="login-page">
+
+<!-- Login Page -->
+<div id="login-container">
+  <div class="login-image-container">
+    <p class="login-caption">Plan and track your expenses effortlessly!</p>
+  </div>
+  <form id="login-form">
+    <div class="input-box">
+      <input type="email" id="login-id" required placeholder="Email">
+    </div>
+    <div class="input-box">
+      <input type="password" id="login-password" required placeholder="Password">
+      <i class="fa-solid fa-eye-slash"></i>
+    </div>
+    <div class="captcha-container">
+      <p id="captcha-text"></p>
+      <input type="number" id="captcha-input" required placeholder="Enter CAPTCHA">
+    </div>
+    <div class="remember-me">
+      <input type="checkbox" id="remember-me">
+      <label for="remember-me">Remember me</label>
+      <a href="#" class="forgot-password">Forgot your password?</a>
+    </div>
+    <button type="submit" class="login-btn">Login</button>
+  </form>
+</div>
+
+<!-- Main Content (Initially Hidden) -->
+<div id="main-content" style="display: none;">
+
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="PFT">PERSONAL FINANCE TRACKER</h1>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="sidebar-btn">
+      <button id="main-btn"><i class="fa-solid fa-house"></i> Main</button>
+      <button id="expenses-btn"><i class="fa-solid fa-dollar-sign" style="color: #ffffff;"></i>Expenses</button>
+      <button id="visual-btn"><i class="fa-solid fa-chart-simple" style="color: #ffffff;"></i>Visual Representation</button>
+      <button id="balance-btn"><i class="fa-solid fa-wallet" style="color: #ffffff;"></i>Current Balance</button>
+      
+      <!-- Theme Toggle -->
+      <button id="theme-btn"><i class="fa-solid fa-toggle-on" style="color: #ffffff;"></i>Change Theme</button>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <section id="main-section">
+      <h2 class="AE">Add Expense</h2>
+      <label for="category-select">Category:</label>
+      <select id="category-select">
+          <option value="Food & Beverage">Food & Beverage</option>
+          <option value="Rent">Rent</option>
+          <option value="Transport">Transport</option>
+          <option value="Relaxing">Relaxing</option>
+      </select>
+
+      <label for="amount-input">Amount:</label>
+      <input type="number" id="amount-input" placeholder="Enter Amount">
+
+      <label for="date-input">Date:</label>
+      <input type="date" id="date-input">
+
+      <button id="add-btn">Add</button>
+      <p id="status-text" class="status-message hidden">Successfully Added</p>
+
+    </section>
+
+    <!-- Expenses List -->
+    <section id="expenses-section" class="hidden">
+      <h2>Expenses List</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th>Category</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Delete</th>
+              </tr>
+          </thead>
+          <tbody id="expenses-table-body"></tbody>
+          <tfoot>
+              <tr>
+                  <td colspan="2"><strong>Total:</strong></td>
+                  <td id="total-amount">$0</td>
+                  <td></td>
+              </tr>
+          </tfoot>
+      </table>
+    </section>
+
+    <!-- Pie Chart Section -->
+    <section id="visual-section" class="hidden">
+      <h2>Expense Distribution</h2>
+      <canvas id="expenseChart"></canvas>
+    </section>
+
+    <!-- Current Balance Section -->
+    <section id="balance-section" class="hidden">
+      <h2>Current Balance</h2>
+      <p>Total Income: <input type="number" id="income-input" placeholder="Enter Income"></p>
+      <p>Remaining Balance: <strong id="remaining-balance">$0</strong></p>
+      <button id="calculate-balance">Calculate Balance</button>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
