@@ -1526,6 +1526,62 @@ body:not(.login-page) {
     justify-content: center;
     align-items: center;
 }
+/* Default background for all pages */
+body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login page background */
+body.login-page {
+    background: url('background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Login container styling */
+#login-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    width: 40%;
+    max-width: 450px;
+    height: auto;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    backdrop-filter: blur(5px);
+}
+
+/* Main content styling */
+#main-content {
+    display: none; /* Initially hidden */
+}
+
+/* Show main content after login */
+body:not(.login-page) #main-content {
+    display: block;
+}
 
 
 
